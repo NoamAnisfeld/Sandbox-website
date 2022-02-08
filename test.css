@@ -1,0 +1,83 @@
+:root {
+	font-size: 14px;
+	background: #2bbbea;
+}
+
+h1 {
+	text-align: center;
+}
+
+/* Measures are taken from a real notebook ðŸ™‚ */
+.notepage {
+	width: 14.8cm;
+	height: 20.8cm;
+	padding: 2.5cm 1cm 1.6cm 2.5cm;
+	margin: auto;
+	font-size: 0.5cm;
+    /* Attaching the line height to the current font size, even if modified in child elements */
+	line-height: 200%;
+	background:
+	    repeating-linear-gradient(#00f4 0px 2px, transparent 0 2em) 0 2.5cm / 100% calc(100% - 3cm),
+        linear-gradient(to right, transparent 2.5cm, #00f4 2.5cm 2.54cm, transparent 0),
+        white;
+	background-repeat: no-repeat;
+}
+
+.notepage > :first-child {
+	margin-top: 0.5em;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+	gap: 40px;
+	place-content: center;
+	background: #fd0;
+	padding: 4em;
+	font-size: 120%;
+	font-family: monospace;
+	text-align: center;
+}
+
+.grid > li {
+	border: 1px solid;
+	padding: 2em;
+	background: #5af;
+	
+	display: flex;
+	flex-flow: column;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1;
+}
+
+#tools-learned {
+	margin-top: 5em;
+	text-align: center;
+}
+
+.grid b::after {
+	content: "\a\a";
+	white-space: pre;
+}
+
+#todo {
+	font-family: cursive;
+	margin-left: -0.9cm;
+	list-style-type: none;
+}
+
+#todo > li[checked] {
+	list-style-type: "✔   ";
+}
+
+#todo > li[checked]::marker {
+	color: #0f0;
+}
+
+#test {
+	d: path("M50 50, H100, V100, H50Z");
+	stroke-width: 5px;
+	stroke: yellow;
+	fill: blue;
+}
